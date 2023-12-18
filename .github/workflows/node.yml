@@ -29,6 +29,3 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-
-      - name: Run Install Scripts
-        run: npx concurrently "npm run install-client" "npm run install-server"
