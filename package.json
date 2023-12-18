@@ -1,0 +1,25 @@
+{
+  "name": "nasc-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run start --prefix server",
+    "client": "npm run start --prefix client",
+    "watch": "concurrently \"npm run client\" \"npm run server\"",
+    "deploy": "npm run build --prefix client && npm run start --prefix server",
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "concurrently \"npm run install-client\" \"npm run install-server\"",
+    "test": "npm run test --prefix server && npm run test --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "mongoose": "^8.0.3"
+  }
+}
