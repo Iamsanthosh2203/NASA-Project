@@ -24,11 +24,11 @@ jobs:
       - name: Update npm
         run: npm install -g npm@7.24.0
 
-      - name: Install Dependencies
-        run: npm install
-
       - name: Install Concurrently Locally
         run: npm install concurrently --no-save
+
+      - name: Install Dependencies
+        run: npm install
 
       - name: Run Install Scripts
         run: npx concurrently "npm run install-client" "npm run install-server"
