@@ -10,7 +10,7 @@
     "deploy": "npm run build --prefix client && npm run start --prefix server",
     "install-server": "npm install --prefix server",
     "install-client": "npm install --prefix client",
-    "install": "concurrently \"npm run install-client\" \"npm run install-server\"",
+    "install": "npm run install-server && npm run install-client",
     "test": "npm run test --prefix server && npm run test --prefix client"
   },
   "keywords": [],
