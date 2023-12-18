@@ -22,10 +22,13 @@ jobs:
           node-version: "18"
 
       - name: Update npm
-        run: npm install -g npm
+        run: npm install -g npm@7.24.0
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Project
-        run: npm run build --if-present
+      - name: Install Concurrently Locally
+        run: npm install concurrently --no-save
+
+      - name: Run Install Scripts
+        run: npx concurrently "npm run install-client" "npm run install-server"
