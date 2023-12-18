@@ -14,4 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
+      - run: npm install concurrently --no-save
+      - run: npx concurrently "npm run install-client" "npm run install-server"
+
+      - run: npm install
       - run: npm run build --prefix ./client
